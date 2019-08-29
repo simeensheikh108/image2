@@ -1,4 +1,9 @@
-node {
+pipeline{
+    environment {
+    
+    customImage = ''
+  }
+    node {
     stage('Git')
     {
     checkout scm
@@ -17,4 +22,5 @@ node {
         customImage.push()
         }
     }
+}
 }
