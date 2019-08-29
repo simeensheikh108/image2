@@ -29,7 +29,7 @@ pipeline{
 		    steps
 		    {
 			    script {
-				     aquaMicroscanner imageName: 'simeensheikh/demoimage4', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+				     aquaMicroscanner imageName: 'simeensheikh/demoimage4', notCompliesCmd: '', onDisallowed: 'ignore', outputFormat: 'html'
 			    }
 		    }
 	    }
