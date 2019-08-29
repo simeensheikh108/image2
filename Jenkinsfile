@@ -28,9 +28,11 @@ pipeline{
 		{
 	    steps {
 		    script {
-		    
+			  
+		 docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {    
         /* Push the container to the custom Registry */
         customImage.push()
+		 }
 		    }
         }
 	    }
