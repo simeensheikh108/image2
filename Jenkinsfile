@@ -18,11 +18,21 @@ pipeline{
 		    script {
     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
 
-        customImage = docker.build("simeensheikh/demoimage3")
+        customImage = docker.build("simeensheikh/demoimage4")
     }
     }
     }
 	}
+	    
+    stage('Aqua')
+	    {
+		    steps
+		    {
+			    script {
+				     aquaMicroscanner imageName: 'simeensheikh/demoimage4', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+			    }
+		    }
+	    }
 
         stage ('PushImage')
 		{
