@@ -1,9 +1,10 @@
 pipeline{
     environment {
-    
     customImage = ''
   }
-    node {
+    
+    agent any
+    stages {
     stage('Git')
     {
     checkout scm
@@ -23,4 +24,4 @@ pipeline{
         }
     }
 }
-}
+
