@@ -23,8 +23,9 @@ pipeline{
 	}
 
         stage ('PushImage')
+		{
 	    steps {
-		    {
+		    
         /* Push the container to the custom Registry */
         customImage.push()
         }
