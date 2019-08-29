@@ -16,6 +16,7 @@ pipeline{
 
         def customImage = docker.build("simeensheikh/demoimage2")
     }
+	}
 
         stage ('PushImage')
         {
@@ -24,4 +25,3 @@ pipeline{
         }
     }
 }
-
